@@ -6,6 +6,7 @@ from .extensions import appbuilder, db
 from flask_appbuilder import ModelView
 from flask_appbuilder.models.sqla.interface import SQLAInterface
 from .models import Categoria, Producto
+from flask_appbuilder import IndexView, expose
 class CategoriaModelView(ModelView):
     datamodel = SQLAInterface(Categoria)
     add_form_extra_fields = {
@@ -55,3 +56,4 @@ class ProductoModelView(ModelView):
 appbuilder.add_view(CategoriaModelView, "Categorías", icon="fa-folder-open-o", category="Configuraciones", category_icon="fa-cogs")
 
 appbuilder.add_view(ProductoModelView, "Productos", icon="fa-cube", category="Configuraciones", category_icon="fa-cogs")
+
